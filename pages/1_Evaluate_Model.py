@@ -111,6 +111,22 @@ def render():
                     caption=f'Grad-CAM for {spec.title} where predicted class is "{class_name}"',
                     width="stretch",
                 )
+    st.markdown(
+        """
+        <div class='card'>
+            <h3>Sorry for the Initial Loading Time</h3>
+            <p>
+                We are using Streamlit to host the initial version of this application. 
+                It uses a remote setup, which requires downloading the entire GitHub repository. 
+                As a result, the loading process may take some time. 
+                Please be patient while the application loads. 
+                It may take approximately 2–5 minutes, depending on your internet connection. 
+            </p>
+            <strong>***Once all the files are downloaded, the application will not require this loading time again.***</strong>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     footer()
 

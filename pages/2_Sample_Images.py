@@ -31,12 +31,22 @@ def render():
         return
 
     cols = st.columns(3)
+    info_dic = {
+        0: "Polyps | Abnormal",
+        1: "Z-Line | Normal | Non-Polyps",
+        2: "Pylorus | Normal | Non-Polyps",
+        3: "Cecum | Normal | Non-Polyps",
+        4: "Esophagitis | Abnormal | Non-Polyps",
+        5: "Ulcerative-Colitis | Abnormal | Non-Polyps",
+        6: "Dyed-Lifted-Polyps",
+        7: "Dyed-Resection-Margins",
+    }
     for i, path in enumerate(items):
         with cols[i % 3]:
             st.image(path, caption=os.path.basename(path), width="stretch")
+            st.info(f"{info_dic[i % 8]}", width="stretch")
 
     footer()
 
 
 render()
-
